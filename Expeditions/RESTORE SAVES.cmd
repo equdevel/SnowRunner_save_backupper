@@ -1,6 +1,6 @@
 @echo off
 
-call "..\exe\env.cmd" Expeditions
+call ..\exe\env.cmd Expeditions
 
 if exist "_backup\last\" (
     if exist "%SAVE_DIR%\" (

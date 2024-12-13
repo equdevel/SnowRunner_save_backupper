@@ -1,6 +1,6 @@
 @echo off
 
-call "..\exe\env.cmd" SnowRunner
+call ..\exe\env.cmd SnowRunner
 
 if exist "_backup\last\" (
     if exist "%SAVE_DIR%\" (

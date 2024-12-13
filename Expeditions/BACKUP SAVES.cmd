@@ -1,6 +1,6 @@
 @echo off
 
-call "..\exe\env.cmd" Expeditions
+call ..\exe\env.cmd Expeditions
 
 if exist "%SAVE_DIR%\" (
     rmdir /s /q _backup\prev 2> NUL
