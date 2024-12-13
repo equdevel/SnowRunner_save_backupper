@@ -1,12 +1,11 @@
 @echo off
 
-set ROOT=%CD%\..
-
-call %ROOT%\exe\env.cmd Expeditions
+call "..\exe\env.cmd" Expeditions
 
 if exist "%SAVE_DIR%\" (
-    rmdir /s /q _backup 2> NUL
-    xcopy "%SAVE_DIR%" .\_backup /e /q /r /y /v /i
+    rmdir /s /q _backup\prev 2> NUL
+    rename _backup\last prev 2> NUL
+    xcopy "%SAVE_DIR%" _backup\last /e /q /r /y /v /i
 ) else (
     echo Save directory not found!
 )

@@ -1,13 +1,11 @@
 @echo off
 
-set ROOT=%CD%\..
+call "..\exe\env.cmd" SnowRunner
 
-call %ROOT%\exe\env.cmd SnowRunner
-
-if exist ".\_backup\" (
+if exist "_backup\last\" (
     if exist "%SAVE_DIR%\" (
         rmdir /s /q "%SAVE_DIR%" 2> NUL
-        xcopy .\_backup "%SAVE_DIR%" /e /q /r /y /v /i
+        xcopy _backup\last "%SAVE_DIR%" /e /q /r /y /v /i
     ) else (
         echo Save directory not found!
     )
