@@ -4,11 +4,16 @@ set ROOT=%CD%\..
 
 call %ROOT%\exe\env.cmd Expeditions
 
-rmdir /s /q "%SAVE_DIR%" 2> NUL
-xcopy .\_backup "%SAVE_DIR%" /e /q /r /y /v /i
-
-rem rmdir /s /q .\_restore 2> NUL
-rem xcopy .\_backup .\_restore /e /q /r /y /v /i
+if exist ".\_backup\" (
+    if exist "%SAVE_DIR%\" (
+        rmdir /s /q "%SAVE_DIR%" 2> NUL
+        xcopy .\_backup "%SAVE_DIR%" /e /q /r /y /v /i
+    ) else (
+        echo Save directory not found!
+    )
+) else (
+    echo Backup directory not found!
+)
 
 echo.
 pause

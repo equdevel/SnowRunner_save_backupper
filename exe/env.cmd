@@ -9,7 +9,7 @@ set S_COND=Where-Object {(Get-ChildItem -Path $_.Directory.FullName -File -Filte
 for /f "usebackq delims=" %%i in (`powershell -Command "(Get-ChildItem -Path '%MY_DOCS%\My Games\%GAME%\base\storage', '%PUBLIC%\Documents\Steam' -Recurse -Exclude 'backupSlots' -File -Filter 'user_profile.*' | %S_COND% | Sort-Object -Property LastAccessTimeUtc -Descending | Select-Object -First 1).Directory.FullName"`) do set SAVE_DIR=%%i
 
 echo.
-echo SnowRunner/Expeditions save backupper v1.0.6 by EquDevel
+echo SnowRunner/Expeditions save backupper v1.0.7 by EquDevel
 echo.
 echo GAME=%GAME%
 echo.
